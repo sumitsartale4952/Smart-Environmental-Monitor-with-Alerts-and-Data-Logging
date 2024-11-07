@@ -27,7 +27,7 @@ while True:
     # Read and calculate temperature
     val_temp = board.get_adc_value(board.A0)
     temperature = (val_temp / 4096) * 3300 / 10.24
-    temp_display = f"Temp: {temperature:.1f}C ☀️" if temperature > TEMP_THRESHOLD else f"Temp: {temperature:.1f}C"
+    temp_display = f"Temp: {temperature:.1f}C"
     
     # Display temperature with background color based on threshold
     setText(temp_display)
@@ -37,7 +37,7 @@ while True:
     # Read and calculate humidity
     val_humid = board.get_adc_value(board.A1)
     humidity = (val_humid / 4096) * 100
-    humid_display = f"Humidity: {humidity:.1f}% 💧" if humidity > HUMIDITY_THRESHOLD else f"Humidity: {humidity:.1f}%"
+    humid_display = f"Humidity: {humidity:.1f}%"
     
     # Display humidity with background color based on threshold
     setText(humid_display)
